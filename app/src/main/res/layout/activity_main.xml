@@ -13,78 +13,94 @@
         android:id="@+id/textView"
         android:layout_width="163dp"
         android:layout_height="50dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="48dp"
         android:fontFamily="@font/angkor"
         android:text="Turco"
         android:textAlignment="center"
         android:textColor="#7a0c17"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="48dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="180dp"
         android:layout_height="49dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="35dp"
         android:fontFamily="sans-serif-black"
         android:text="Partida até:"
         android:textAlignment="center"
         android:textColor="#d72638"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="135dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/editEquipe2"
         android:layout_width="161dp"
         android:layout_height="48dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="22dp"
         android:ems="10"
         android:hint="Nome equipe 2"
         android:inputType="text"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="217dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPontos" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editUm"
         android:layout_width="161dp"
         android:layout_height="48dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="35dp"
         android:ems="10"
         android:hint="Nome equipe 1"
         android:inputType="text"
         android:shadowColor="#d72638"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="217dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/editPontos"
         android:layout_width="103dp"
         android:layout_height="49dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="84dp"
         android:ems="10"
         android:hint="N. pontos"
         android:inputType="text"
-        tools:layout_editor_absoluteX="224dp"
-        tools:layout_editor_absoluteY="123dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/ButtonMenosUm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#d72638"
+        android:onClick="diminuirNumeroUm"
         android:text="-"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="443dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMaisUm" />
 
     <Button
         android:id="@+id/buttonMenosDois"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="49dp"
         android:backgroundTint="#d72638"
+        android:onClick="diminuirNumeroDois"
         android:text="-"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="287dp"
-        tools:layout_editor_absoluteY="443dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMaisDois" />
 
     <Button
         android:id="@+id/buttonMaisUm"
@@ -93,10 +109,11 @@
         android:layout_marginStart="49dp"
         android:layout_marginTop="38dp"
         android:backgroundTint="#d72638"
+        android:onClick="adicionarNumeroUm"
         android:text="+"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/pontosEquipeUm" />
 
     <Button
         android:id="@+id/button6"
@@ -116,28 +133,35 @@
         android:id="@+id/buttonMaisDois"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="49dp"
         android:backgroundTint="#d72638"
+        android:onClick="adicionarNumeroDois"
         android:text="+"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="287dp"
-        tools:layout_editor_absoluteY="379dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pontosEquipeDois" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/pontosEquipeUm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="20"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="28dp"
+        android:text="0"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="72dp"
-        tools:layout_editor_absoluteY="296dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editUm" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/pontosEquipeDois"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="20"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="84dp"
+        android:text="0"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="299dp"
-        tools:layout_editor_absoluteY="296dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEquipe2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

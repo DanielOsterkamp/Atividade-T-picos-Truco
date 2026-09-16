@@ -3,6 +3,7 @@ package com.example.turco;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity2 extends AppCompatActivity {
+
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,11 @@ public class MainActivity2 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        textView = findViewById(R.id.textView5);
+        String nome = getIntent().getStringExtra("Vencedor");
+        String texto = nome + " Venceu!";
+        textView.setText(texto);
     }
 
     public void toInicial(View view){
