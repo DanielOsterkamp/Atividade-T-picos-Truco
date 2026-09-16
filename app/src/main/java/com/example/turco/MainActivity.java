@@ -148,5 +148,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void reiniciar(View view){
+
+        pontosUm = 0;
+        pontosDois = 0;
+
+        textoUm.setText("0");
+        textoDois.setText("0");
+
+        editPontos.setText("");
+        editEquipeDois.setText("");
+        editEquipeUm.setText("");
+
+    }
+
 
 }
