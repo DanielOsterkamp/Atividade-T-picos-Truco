@@ -123,6 +123,7 @@
         android:layout_marginEnd="110dp"
         android:layout_marginBottom="92dp"
         android:backgroundTint="#d72638"
+        android:onClick="reiniciar"
         android:text="Reiniciar Partida"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
