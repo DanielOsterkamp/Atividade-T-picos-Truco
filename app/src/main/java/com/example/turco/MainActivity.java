@@ -195,5 +195,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //RecyclerView recyclerView = findViewById(R.id.lista);
+    //
+    //        JogadoresAdapter adapter = new JogadoresAdapter(time,getApplicationContext());
+    //        recyclerView.setHasFixedSize(true);
+    //        recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
+    //        recyclerView.setAdapter(adapter);
+
 
 }
