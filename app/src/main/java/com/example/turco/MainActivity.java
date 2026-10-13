@@ -1,6 +1,8 @@
 package com.example.turco;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -11,6 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -132,15 +139,41 @@ public class MainActivity extends AppCompatActivity {
 
     public void encontraVencedor (){
 
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        String data = formato.format(new Date());
+
         int pontosMaximo = Integer.parseInt(editPontos.getText().toString());
 
         Intent intent = new Intent(this, MainActivity2.class);
 
         if (pontosUm>=pontosMaximo){
+            SQLiteDatabase db = new BancoHelper(this).getWritableDatabase();
+            ContentValues valores = new ContentValues();
+
+            valores.put("data", data);
+            valores.put("jogador1", editEquipeUm.getText().toString());
+            valores.put("jogador2", editEquipeDois.getText().toString());
+            valores.put("pontos1", pontosUm);
+            valores.put("pontos2", pontosDois);
+            valores.put("vencedor", editEquipeUm.getText().toString());
+            db.insert("usuarios", null, valores);
+
             intent.putExtra("Vencedor", editEquipeUm.getText().toString());
             startActivity(intent);
 
         }else if (pontosDois >= pontosMaximo){
+
+            SQLiteDatabase db = new BancoHelper(this).getWritableDatabase();
+            ContentValues valores = new ContentValues();
+
+            valores.put("data", data);
+            valores.put("jogador1", editEquipeUm.getText().toString());
+            valores.put("jogador2", editEquipeDois.getText().toString());
+            valores.put("pontos1", pontosUm);
+            valores.put("pontos2", pontosDois);
+            valores.put("vencedor", editEquipeDois.getText().toString());
+            db.insert("usuarios", null, valores);
+
             intent.putExtra("Vencedor", editEquipeDois.getText().toString());
             startActivity(intent);
 
