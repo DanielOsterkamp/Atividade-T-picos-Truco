@@ -27,25 +27,21 @@ public class HistoricoAdapter extends RecyclerView.Adapter<HistoricoAdapter.MyVi
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
-        View itemLista = LayoutInflater.from(parent.getContext()).inflate(R.layout.jogador_adapter,parent,false);
+        View itemLista = LayoutInflater.from(parent.getContext()).inflate(R.layout.historico_adapter,parent,false);
         return new MyViewHolder(itemLista);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        // Jogador jogador = listaJogador.get(position);
-        //
-        //        if (jogador instanceof Capitao){
-        //            holder.card.setBackground(ContextCompat.getDrawable(context,R.drawable.capitao_card));
-        //        }
-        //
-        //        holder.posicao.setText(jogador.getPosicao());
-        //        holder.num.setText(String.valueOf(jogador.getNumero()));
-        //        holder.nome.setText(jogador.getNome());
-        //
-        //        Glide.with(holder.itemView)
-        //                .load(jogador.getUrl())
-        //                .into(holder.img);
+         Historico historico = listaHistorico.get(position);
+
+         holder.jogador1.setText(historico.getNome1());
+         holder.jogador2.setText(historico.getNome2());
+        holder.pontos1.setText(String.valueOf(historico.getPonto1()));
+        holder.pontos2.setText(String.valueOf(historico.getPonto2()));
+        holder.data.setText(historico.getData());
+        holder.vencedor.setText("O vencedor é:" + historico.getVencedor());
+
     }
 
     @Override
@@ -55,13 +51,23 @@ public class HistoricoAdapter extends RecyclerView.Adapter<HistoricoAdapter.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-    // TextView posicao;
+         TextView jogador1;
+        TextView jogador2;
+        TextView pontos2;
+        TextView pontos1;
+        TextView data;
+        TextView vencedor;
 
 
         public MyViewHolder(View itemView){
             super(itemView);
 
-            //nome = itemView.findViewById(R.id.nome);
+            jogador1 = itemView.findViewById(R.id.jogador1);
+            jogador2 = itemView.findViewById(R.id.jogador2);
+            pontos1 = itemView.findViewById(R.id.pontos1);
+            pontos2 = itemView.findViewById(R.id.pontos2);
+            data = itemView.findViewById(R.id.data);
+            vencedor = itemView.findViewById(R.id.vencedor);
 
 
         }

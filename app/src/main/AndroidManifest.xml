@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Turco">
         <activity
+            android:name=".HistoricoUI"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity2"
             android:exported="false" />
         <activity
